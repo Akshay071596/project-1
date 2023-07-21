@@ -6,11 +6,16 @@ pipeline{
 			  }
 	 }
 		 stages{
-		 
+		         stage("git-install"){
+                             steps{
+				     sh"sudo yum install git -y"
+
+			     }
+			 }
 				stage("httpd-install-start"){
 				     steps{
-					      sh"yum install httpd -y"
-						  sh"service httpd start"
+					      sh" sudo yum install httpd -y"
+						  sh"sudo service httpd start"
 					 }
 				
 				
@@ -18,8 +23,8 @@ pipeline{
 		        
 				stage("deploy-index"){
 				     steps{
-					       sh"chmod -R 777 /var/www/html"
-						   sh"cp index.html /var/www/html"
+					       sh"sudo chmod -R 777 /var/www/html"
+						   sh"sudo cp index.html /var/www/html"
 					 
 					 }
 				
