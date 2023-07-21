@@ -7,13 +7,6 @@ pipeline{
 	 }
 		 stages{
 		 
-				stage("build"){
-				     steps{
-					       sh"build"
-					 }
-				
-				}
-		        
 				stage("httpd-install-start"){
 				     steps{
 					      sh"yum install httpd -y"
