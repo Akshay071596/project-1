@@ -6,12 +6,7 @@ pipeline{
 			  }
 	 }
 		 stages{
-		         stage("git-install"){
-                             steps{
-				     sh"sudo yum install git -y"
-
-			     }
-			 }
+		         
 				stage("httpd-install-start"){
 				     steps{
 					      sh" sudo yum install httpd -y"
@@ -20,7 +15,16 @@ pipeline{
 				
 				
 				}
-		        
+                             stage("install-git"){
+					steps{
+					sh"sudo yum install git -y"
+
+					}
+					
+
+			     }
+
+			 
 				stage("deploy-index"){
 				     steps{
 					       sh"sudo chmod -R 777 /var/www/html"
