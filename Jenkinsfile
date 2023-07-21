@@ -5,13 +5,7 @@ pipeline{
 			   customWorkspace "/mnt/assignment-2"
 			  }
 	 }
-		 stages{
-		         stage("git-install"){
-                             steps{
-				     sh"sudo yum install git -y"
-
-			     }
-			 }
+		 
 				stage("httpd-install-start"){
 				     steps{
 					      sh" sudo yum install httpd -y"
