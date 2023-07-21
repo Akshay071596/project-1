@@ -15,15 +15,7 @@ pipeline{
 				
 				
 				}
-                             stage("install-git"){
-					steps{
-					sh"sudo yum install git -y"
-
-					}
-					
-
-			     }
-
+                             
 			 
 				stage("deploy-index"){
 				     steps{
