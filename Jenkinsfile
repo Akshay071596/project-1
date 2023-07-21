@@ -5,7 +5,7 @@ pipeline{
 			   
 			  }
 	 }
-		 
+		 stages{
 				stage("httpd-install-start"){
 				     steps{
 					      sh" sudo yum install httpd -y"
